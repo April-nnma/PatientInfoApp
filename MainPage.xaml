@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab8PatientInfo.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="10,0"
+            VerticalOptions="Start"
+            HorizontalOptions="FillAndExpand">
+
+            <Frame Padding="5" CornerRadius="4">
+                <Label Text="Patient Info" HorizontalTextAlignment="Center"
+                          TextColor="BlueViolet" FontSize="Title"/>
+            </Frame>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Name" VerticalOptions="Center" Margin="0,0,30,0" HorizontalOptions="Start"/>
+                <Entry x:Name="txtName" HorizontalOptions="StartAndExpand" Placeholder="Enter Name" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="DOB" VerticalOptions="Center" Margin="0,0,30,0"/>
+                <DatePicker x:Name="dtpDateofBirth" Format="dd/MM/yyyy"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Income" VerticalOptions="Center" Margin="0,0,30,0"/>
+                <Picker x:Name="cbxIncome" Title="Please select" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <Picker.Items>
+            
+                            <x:String>High</x:String>
+                            <x:String>Medium</x:String>
+                            <x:String>Low</x:String>
+                      
+                    </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Gender" VerticalOptions="Center" Margin="0,0,30,0"/>
+                <Switch x:Name="swtGender" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="BMI" VerticalOptions="Center" Margin="0,0,30,0"/>
+                <Picker x:Name="cbxBMI" Title="Please Select" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Picker>
+            </HorizontalStackLayout>
+
+            <Button x:Name="btnSubmit" Text="Submit" Clicked="btnSubmit_Clicked" HorizontalOptions="Center" SemanticProperties.Hint="Display into users selected"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
