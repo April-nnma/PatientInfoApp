@@ -46,7 +46,8 @@
                 <Picker x:Name="cbxBMI" Title="Please Select" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Picker>
             </HorizontalStackLayout>
 
-            <Button x:Name="btnSubmit" Text="Submit" Clicked="btnSubmit_Clicked" HorizontalOptions="Center" SemanticProperties.Hint="Display into users selected"/>
+            <Button x:Name="btnSubmit" Text="Save" Clicked="btnSubmit_Clicked" HorizontalOptions="Center" SemanticProperties.Hint="Display into users selected"/>
+            <Button x:Name="btnView" Text="View Patient List" Clicked="btnView_Clicked" HorizontalOptions="Center"/>
 
         </VerticalStackLayout>
     </ScrollView>
