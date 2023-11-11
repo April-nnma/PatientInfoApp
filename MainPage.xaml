@@ -48,7 +48,8 @@
 
             <Button x:Name="btnSubmit" Text="Save" Clicked="btnSubmit_Clicked" HorizontalOptions="Center" SemanticProperties.Hint="Display into users selected"/>
             <Button x:Name="btnView" Text="View Patient List" Clicked="btnView_Clicked" HorizontalOptions="Center"/>
-
+            <Button x:Name="btnLoad" Text="Load Patient from DB" Clicked="btnLoad_Patient_Clicked" HorizontalOptions="Center"/>
+ 
         </VerticalStackLayout>
     </ScrollView>
 

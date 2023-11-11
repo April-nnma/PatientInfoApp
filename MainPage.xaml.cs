@@ -5,7 +5,7 @@ public partial class MainPage : ContentPage
     {
         int count = 0;
         App thisApp = Microsoft.Maui.Controls.Application.Current as App;
-
+        private MySQLiteDatabase myDB;
         public MainPage()
     {
             InitializeComponent();
@@ -14,7 +14,8 @@ public partial class MainPage : ContentPage
             this.cbxBMI.Items.Add("Overweight");
 
             thisApp.PatientList = new ObservableCollection<Patient>();
-    }
+            myDB = new MySQLiteDatabase();
+        }
 
         private async void btnSubmit_Clicked(object sender, EventArgs e)
         {
@@ -24,15 +25,19 @@ public partial class MainPage : ContentPage
                 Patient p = new Patient(count++, this.txtName.Text, this.dtpDateofBirth.Date, this.swtGender.IsToggled, 
                                         this.cbxIncome.SelectedItem.ToString(),this.cbxBMI.SelectedItem.ToString());
                 thisApp.PatientList.Add(p);
+                myDB.insertPatient(p);
                 await DisplayAlert("Information", "Information submitted", "OK");
             }  
             //SemanticScreenReader.Announce(btnSubmit.Text);
         }
         private void btnView_Clicked(object sender, EventArgs e)
         {
-        Navigation.PushModalAsync(new PatientList(),true);
+            Navigation.PushModalAsync(new PatientList(),true);
         }
-    
+        private void btnLoad_Patient_Clicked(object sender, EventArgs e)
+        {
+            thisApp.PatientList = myDB.loadPatient();
+        }
     }
 
 
